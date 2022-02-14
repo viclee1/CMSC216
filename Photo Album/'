@@ -1,0 +1,44 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include "photo_album.h"
+
+Photo *create_photo(int id, const char *description) {
+	Photo photo;
+	if (description != NULL) {
+		photo.description = malloc(strlen(description) + 1);
+		if (photo.description == NULL) {
+			return NULL;
+		}
+		strcpy(photo.description, description);
+	} else {
+		photo.description = NULL;
+	}
+	photo.id = id;
+	printf("%s", photo.description);
+	return photo;
+}
+/*
+void print_photo(Photo *photo) {
+
+}
+
+void destroy_photo(Photo *photo) {
+
+}
+
+void initialize_album(Album *album) {
+
+}
+
+void print_album(const Album *album) {
+
+}
+
+void destroy_album(Album *album) {
+
+}
+
+void add_photo_to_album(Album *album, int id, const char *description) {
+
+}*/
